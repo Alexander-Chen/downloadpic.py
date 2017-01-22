@@ -12,7 +12,7 @@ except:
     pass
 from bs4 import BeautifulSoup
 
-PWD = "D:/work/python/zhihu/"
+PWD = "D:/python/"        #图片保存目录
 # 构造 Request headers
 # 登陆的url地址
 logn_url = 'http://www.zhihu.com/#signin'
@@ -85,7 +85,7 @@ def login(secret, account):
         # 不需要验证码直接登录成功
         login_page = session.post(post_url, data=postdata, headers=headers)
         login_code = login_page.text
-        print(login_page.status)
+        #print(login_page.status)
         print(login_code)
     except:
         # 需要输入验证码后才能登录成功
@@ -150,7 +150,7 @@ def change(offset, count, photoNum):
     }
     data = {
         'method': 'next',
-        'params': '{"url_token":' + str(37709992) + ',"pagesize": "10",' + \
+        'params': '{"url_token":' + str(51568998) + ',"pagesize": "10",' + \
                   '"offset":' + str(offset) + "}",
         '_xsrf': getxsrf(),
 
